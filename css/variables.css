@@ -5,6 +5,7 @@
     --colorSecondary: #1B2A33;
     --colorBackground: #060F13;
     --colorCardBackground: #0D1E26;
+    --colorPill: #1b2a3331;
 
     --colorText: #E2E8F0;
     --colorTextSecondary: #94A3B8;
@@ -15,9 +16,10 @@
     --fontSizeHeading: clamp(2rem, 5vw + 1rem, 4rem);
     --fontSizeSubHeading: clamp(1.5rem, 3vw + 1rem, 3rem);
     --fontSizeSubbierHeading: clamp(1rem, 1.2vw + 0.8rem, 2rem);
-    --fontSizeParagraph: clamp(1rem, 1.5vw, 1.25rem);
+    --fontSizeParagraph: clamp(1rem, 1.5vw, 1rem);
 
     --paddingMobile: 0.8rem;
+    --paddingDesktop: 2rem 6rem;
     --paddingPill: 0.4rem;
 
     --borderRadiusOuter: 0.8rem;
@@ -26,4 +28,6 @@
     --outerGlow: 0px 0px 40px 0px rgba(222,20,20,0.97);
 
     --border: 4px dotted #060F13;
+
+    --gradient: linear-gradient(135deg, hsla(0, 83%, 47%, 1) 0%, hsla(335, 91%, 70%, 1) 100%);
 }

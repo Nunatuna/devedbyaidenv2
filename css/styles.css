@@ -54,6 +54,11 @@ body {
     img {
         width: 100%;
     }
+
+    a, button {
+        -webkit-tap-highlight-color: transparent;
+    }
+
 }
 
 nav {

@@ -1,0 +1,283 @@
+@import "variables.css";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fontParagraph);
+}
+
+.material-symbols-rounded {
+    font-family: 'Material Symbols Rounded';
+  font-variation-settings: 
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
+.active {
+    color: var(--colorMain);
+}
+
+.hidden {
+    display: none;
+}
+
+body {
+    background-color: var(--colorBackground);
+
+    h1, h2, h3, p {
+        color: var(--colorText);
+    }
+
+    h1, h2, h3 {
+        font-family: var(--fontHeader);
+    }
+
+    h1 {
+        font-size: var(--fontSizeHeading);
+    }
+
+    h2 {
+        font-size: var(--fontSizeSubHeading);
+    }
+
+    h3 {
+        font-size: var(--fontSizeSubbierHeading);
+    }
+
+    p {
+        font-size: var(--fontSizeParagraph);
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
+nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--colorSecondary);
+    padding: var(--paddingMobile);
+
+    .icon-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-nav {
+        display: none;
+    }
+    
+    .icon-nav {
+        text-decoration: none;
+        
+        p {
+            font-size: 0.6rem;
+        }
+    }
+    
+    ul {
+        display: flex;
+        justify-content: space-evenly;
+        list-style: none;
+        gap: 1rem;
+        
+        a {
+            text-decoration: none;
+            color: var(--colorText);
+            font-size: var(--fontSizeParagraph);
+            font-family: var(--fontHeader);
+            text-transform: uppercase;
+            font-weight: 800;
+            
+            span {
+                font-family: var(--fontHeader);
+            }
+        }
+    }
+
+    @media (min-width: 500px) {
+        .text-nav {
+            display: unset;
+        }
+
+        .icon-nav {
+            display: none;
+        }
+    }
+}
+
+@media (min-width: 500px) {
+    nav {
+        position: unset;
+    }
+}
+
+
+main {
+    padding: var(--paddingMobile);
+    padding-bottom: 5rem;
+
+    @media (min-width: 500px) {
+        padding-bottom: var(--paddingMobile);
+    }
+}
+
+/* ########## HOME PAGE ########## */
+
+#page-home {
+    img {
+        width: 100%;
+    }
+
+    .welcome-text {
+        text-align: center;
+
+        span {
+            color: var(--colorTextSecondary);
+            font-size: 0.8rem;
+            font-family: var(--fontHeader);
+        }
+    }
+}
+
+/* ########## ABOUT PAGE ########## */
+
+.about {
+    display: grid;
+    gap: 1rem;
+
+    .about-intro-card {
+        background-color: var(--colorCardBackground);
+        border-radius: var(--borderRadiusOuter);
+        overflow: hidden;
+
+        div {
+            padding: var(--paddingMobile);
+            text-align: center;
+        }
+    
+        .about-intro-name {
+            p {
+                color: var(--colorTextSecondary);
+                font-family: var(--fontHeader);
+            }
+        }
+    
+        .about-contact-container {
+            
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+                background-color: var(--colorMain);
+                color: var(--colorText);
+                font-family: var(--fontHeader);
+                text-decoration: none;
+                padding: var(--paddingMobile);
+                border-radius: var(--borderRadiusInner);
+                transition: 0.3s;
+            }
+
+            a:hover {
+                box-shadow: var(--outerGlow);
+            }
+        }
+    }
+
+    .about-experience-card {
+        background-color: var(--colorCardBackground);
+        border-radius: var(--borderRadiusOuter);
+        overflow: hidden;
+
+        > div {
+            padding: 1rem;
+        }
+
+        div:nth-child(n+3) {
+            border-top: var(--border);
+        }
+
+        .experience-card-header {
+            background-color: var(--colorSecondary);
+            
+            h2 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+            }
+        }
+
+        .experience-card-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                list-style: none;
+                gap: 1rem;
+
+                li {
+                    color: var(--colorTextSecondary);
+                    background-color: var(--colorSecondary);
+                    padding: var(--paddingPill);
+                    border-radius: var(--borderRadiusInner);
+                }
+            }
+        }
+    }
+    
+    .about-education-card {
+        background-color: var(--colorCardBackground);
+        border-radius: var(--borderRadiusOuter);
+        overflow: hidden;
+
+        > div {
+            padding: 1rem;
+        }
+
+        div:nth-child(n+3) {
+            border-top: var(--border);
+        }
+
+        .education-card-header {
+            background-color: var(--colorSecondary);
+            
+            h2 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+            }
+        }
+
+        .education-card-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                list-style: none;
+                gap: 1rem;
+
+                li {
+                    color: var(--colorTextSecondary);
+                    background-color: var(--colorSecondary);
+                    padding: var(--paddingPill);
+                    border-radius: var(--borderRadiusInner);
+                }
+            }
+        }
+    }
+}

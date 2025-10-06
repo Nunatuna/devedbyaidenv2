@@ -10,11 +10,12 @@
 </head>
 <body>
 
+    <!-- ########## NAVIGATION ########## -->
     <header>
         <nav>
             <ul>
                 <li>
-                    <a href="#" data-page="page-home" data-title="Home" title="Home">
+                    <a href="#" data-page="page-home" data-title="Home" title="Home" class="active">
                         <span>
                             <div class="text-nav">
                                 <p>Deved by Aiden</p>
@@ -72,17 +73,39 @@
     <main>
         <!-- ########## HOME PAGE ########## -->
 
-        <section id="page-home" class="page hidden">
+        <section id="page-home" class="page">
             <img src="img/me.png" alt="">
             <header class="welcome-text">
                 <h1>Hello</h1>
                 <h3>- I'm Aiden <span>[ay * den]</span></h3>
             </header>
-            <article>
-                <header>
-
-                </header>
-            </article>
+            <div class="project-line-container">
+                <div class="project-line-start"></div>
+                <a href="#projects" class="project-line-scroll"><span class="material-symbols-rounded">mouse</span> Explore</a>
+            </div>
+            <div class="project-line-container">
+                <div class="project-line"></div>
+            </div>
+            <section class="home">
+                <header id="projects"><h2>Projects</h2></header>
+                <article class="project-container">
+                    <div class="project-content">
+                        <header>
+                            <h3>Hilfe</h3>
+                        </header>
+                        <a href="#" data-page="page-portfolio" data-title="Projects" title="Portfolio">link</a>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum nobis soluta fugiat quod ad beatae.</p>
+                    </div>
+                </article>
+                <div class="project-line-container"><div class="project-line"></div></div>
+                <article class="project-container">
+                    <div class="project-content">
+                        <header>
+                            <h3>Project</h3>
+                        </header>
+                    </div>
+                </article>
+            </section>
         </section>
 
         <!-- ########## PORTFOLIO PAGE ########## -->
@@ -100,7 +123,7 @@
 
         <!-- ########## ABOUT PAGE ########## -->
 
-        <section id="page-about" class="page">
+        <section id="page-about" class="page hidden">
             <section class="about">
                 <article class="about-intro-card">
                     <img src="img/pfp.jpg" class="about-intro-img" alt="Portrait of Aiden">
@@ -171,55 +194,6 @@
                     <div class="about-smaug-card">
                         <img src="img/smaug.jpg" alt="My pet lizard, Smaug">
                         <p>Smaug - my pet lizard</p>
-                    </div>
-                </article>
-
-                <article class="about-hobbies-container">
-                    <h3>Hobbies</h3>
-                    <ul>
-                        <li><span class="material-symbols-rounded">joystick</span><p>Gaming</p></li>
-                        <li><span class="material-symbols-rounded">headphones</span><p>Music</p></li>
-                        <li><span class="material-symbols-rounded">camping</span><p>Camping</p></li>
-                        <li><span class="material-symbols-rounded">person_play</span><p>Bouldering</p></li>
-                    </ul>
-                </article>
-
-                <article class="about-skills-container">
-                    <div class="skill">
-                        <div class="skill-header">
-                            <img src="img/html.png" alt="">
-                            <p>HTML</p>
-                        </div>
-                        <div class="skill-bar-container">
-                            <div class="skill-bar html"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-header">
-                            <img src="img/css.png" alt="">
-                            <p>CSS</p>
-                        </div>
-                        <div class="skill-bar-container">
-                            <div class="skill-bar css"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-header">
-                            <img src="img/js.png" alt="">
-                            <p>Javascript</p>
-                        </div>
-                        <div class="skill-bar-container">
-                            <div class="skill-bar js"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-header">
-                            <img src="img/python.png" alt="">
-                            <p>Python</p>
-                        </div>
-                        <div class="skill-bar-container">
-                            <div class="skill-bar python"></div>
-                        </div>
                     </div>
                 </article>
             </section>

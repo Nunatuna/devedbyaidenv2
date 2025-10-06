@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: var(--fontParagraph);
+    scroll-behavior: smooth;
 }
 
 .material-symbols-rounded {
@@ -17,7 +18,10 @@
 }
 
 .active {
-    color: var(--colorMain);
+
+    p, span {
+        color: var(--colorMain);
+    }
 }
 
 .hidden {
@@ -67,6 +71,7 @@ nav {
     width: 100%;
     background-color: var(--colorSecondary);
     padding: var(--paddingMobile);
+    z-index: 2;
 
     .icon-container {
         display: flex;
@@ -76,6 +81,7 @@ nav {
 
     .text-nav {
         display: none;
+        
     }
     
     .icon-nav {
@@ -123,6 +129,17 @@ nav {
     }
 }
 
+@media (min-width: 1200px) {
+    nav {
+        ul {
+            justify-content: space-between;
+            width: 1200px;
+            margin: 0 auto;
+            padding: 0 0.8rem;
+        }
+    }
+}
+
 footer {
     background-color: var(--colorSecondary);
     padding: var(--paddingMobile);
@@ -139,12 +156,6 @@ main {
     padding-bottom: 2rem;
 }
 
-@media (min-width: 1300px) {
-    main {
-        /* padding: var(--paddingDesktop); */
-    }
-}
-
 /* ########## HOME PAGE ########## */
 
 #page-home {
@@ -159,6 +170,78 @@ main {
             color: var(--colorTextSecondary);
             font-size: 0.8rem;
             font-family: var(--fontHeader);
+        }
+    }
+
+    .project-line-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        
+        .project-line-start {
+            border-left: 1.2px solid var(--colorSecondary);
+            height: 70px;
+            margin: 0.8rem 0;
+        }
+        
+        .project-line {
+            border-left: 1.2px solid var(--colorSecondary);
+            height: 70px;
+        }
+
+        .project-line-scroll {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.2rem;
+            color: var(--colorTextSecondary);
+            font-family: var(--fontHeader);
+            text-decoration: none;
+        }
+    }
+    
+    .home {
+        h2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .project-container {
+            position: relative;
+            border-radius: var(--borderRadiusOuter);
+            overflow: hidden;
+            background-color: var(--colorCardBackground); /* fallback */
+        }
+
+        .project-container::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            opacity: 0;
+            transition: 0.3s;
+            background: linear-gradient(45deg, transparent 5%,rgba(222, 20, 20, 0.8) 50%, transparent 95%);
+        }
+
+        .project-container:hover::before {
+            opacity: 1;
+        }
+
+        .project-content {
+            position: relative;
+            background-color: var(--colorCardBackground);
+            margin: 1px;
+            padding: 0.8rem;
+            height: 300px;
+            border-radius: var(--borderRadiusOuter);
+
+            h3 {
+                margin-bottom: 0.5rem;
+            }
+
+            p {
+                color: var(--colorTextSecondary);
+            }
         }
     }
 }
@@ -284,12 +367,12 @@ main {
 
     @media (min-width: 1200px) {
         .about-experience-card {
-            grid-row: 3;
+            grid-row: 2 / 4;
             grid-column: 2;
         }
 
         .about-education-card {
-            grid-row: 3;
+            grid-row: 2 / 4;
             grid-column: 3;
         }
     }
@@ -367,108 +450,19 @@ main {
         }
     }
 
-    .about-hobbies-container {
-        display: none;
-        position: relative;
-        background: var(--gradient);
-        border-radius: var(--borderRadiusOuter);
-        overflow: hidden;
-
-        h3 {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            font-size: 1.2rem;
-            font-family: var(--fontHeader);
-            padding: 4rem 0 0.8rem 0.8rem;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-        }
-
-        ul {
-            display: grid;
-            grid-template-columns: repeat(2, 90px);
-            grid-template-rows: repeat(2, 90px);
-            gap: 2rem;
-            align-content: center;
-            justify-content: center;
-            list-style: none;
-
-            li {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 0.2rem;
-                justify-content: center;
-                padding: var(--paddingMobile);
-                background-color: var(--colorPill);
-                border-radius: var(--borderRadiusInner);
-
-                span {
-                    color: var(--colorText);
-                }
-            }
-        }
-    }
-
     @media (min-width: 1200px) {
         .about-pet-container {
             display: block;
-        }
-
-        .about-hobbies-container {
-            display: grid;
-        }
-    }
-
-    .about-skills-container {
-        display: none;
-        background-color: var(--colorCardBackground);
-        border-radius: var(--borderRadiusOuter);
-        overflow: hidden;
-        padding: var(--paddingMobile);
-
-        .skill {
-            .skill-header {
-                display: flex;
-                align-items: center;
-                gap: 0.5rem;
-                margin-bottom: 1rem;
-
-                img {
-                    width: 30px;
-                }
-            }
-
-            .skill-bar-container {
-                background-color: var(--colorSecondary);
-                height: 10px;
-                border-radius: var(--borderRadiusInner);
-                overflow: hidden;
-
-                .skill-bar {
-                    height: 10px;
-                }
-
-                .html {width: 100%; background: linear-gradient(135deg, hsla(12, 100%, 56%, 1) 0%, hsla(19, 80%, 67%, 1) 100%);}
-                .css {width: 90%; background: linear-gradient(135deg, hsla(220, 100%, 45%, 1) 0%, hsla(215, 68%, 67%, 1) 100%);}
-                .js {width: 20%; background: linear-gradient(135deg, hsla(52, 83%, 63%, 1) 0%, hsla(84, 3%, 35%, 1) 100%);}
-                .python {width: 30%; background: linear-gradient(135deg, hsla(202, 100%, 51%, 1) 0%, hsla(60, 100%, 54%, 1) 100%);}
-            }
-        }
-    }
-
-    @media (min-width: 1200px) {
-        .about-skills-container {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
+            grid-row: 3;
         }
     }
 }
 
+/* ########## RESPONSIVENESS ########## */
 @media (min-width: 600px) {
     main {
+        width: 600px;
+        margin: 0 auto;
         padding-bottom: var(--paddingMobile);
     }
 

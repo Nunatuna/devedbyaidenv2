@@ -1,8 +1,8 @@
-const menuOptions = document.querySelectorAll("nav > ul > li > a");
+const pageLinks = document.querySelectorAll("a[data-page]");
 
-menuOptions.forEach(option => {
-    option.addEventListener("click", function (event) {
-        event.preventDefault(); // Prevent default anchor behavior (page won't refresh)
+pageLinks.forEach(link => {
+    link.addEventListener("click", function (event) {
+        event.preventDefault();
 
         // Hide all pages
         document.querySelectorAll(".page").forEach(page => {
@@ -13,12 +13,27 @@ menuOptions.forEach(option => {
         const targetPageId = this.getAttribute("data-page");
         document.getElementById(targetPageId).classList.remove("hidden");
 
-        // Update active class
-        menuOptions.forEach(opt => opt.classList.remove("active"));
-        this.classList.add("active");
+        // Remove active class from all nav links
+        const navLinks = document.querySelectorAll("nav > ul > li > a");
+        navLinks.forEach(navLink => navLink.classList.remove("active"));
+
+        // If clicked link is inside nav, activate it
+        if (this.closest("nav")) {
+            this.classList.add("active");
+        } else {
+            // Otherwise, find matching nav link by data-page and activate it
+            const matchingNavLink = Array.from(navLinks).find(navLink =>
+                navLink.getAttribute("data-page") === targetPageId
+            );
+            if (matchingNavLink) {
+                matchingNavLink.classList.add("active");
+            }
+        }
 
         // Update document title
         const pageTitle = this.getAttribute("data-title");
-        document.title = `${pageTitle} | Deved By Aiden`;
+        if (pageTitle) {
+            document.title = `${pageTitle} | Deved By Aiden`;
+        }
     });
 });

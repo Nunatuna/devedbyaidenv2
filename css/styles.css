@@ -159,17 +159,53 @@ main {
 /* ########## HOME PAGE ########## */
 
 #page-home {
-    img {
-        width: 100%;
-    }
 
-    .welcome-text {
-        text-align: center;
+    .welcome {
+        
 
-        span {
-            color: var(--colorTextSecondary);
-            font-size: 0.8rem;
-            font-family: var(--fontHeader);
+        article {
+            position: relative;
+            border-radius: var(--borderRadiusOuter);
+            overflow: hidden;
+            height: 400px;
+    
+            header {
+                position: absolute;
+                top: 0;
+                height: 100%;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: #0d1e2694;
+    
+                img {
+                    width: 12rem;
+                    height: auto;
+                }
+    
+                h1 {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    font-size: 2rem;
+    
+                    span {
+                        font-size: 1rem;
+                        font-family: var(--fontHeader);
+    
+                        > span {
+                            color: var(--colorTextSecondary);
+                        }
+                    }
+                }
+            }
+    
+            img {
+                height: 400px;
+                object-fit: cover;
+            }
         }
     }
 
@@ -181,7 +217,7 @@ main {
 
         .project-line-start {
             border-left: 1.2px solid var(--colorSecondary);
-            height: 70px;
+            height: 50px;
             margin: 0.8rem 0;
         }
         
@@ -204,7 +240,7 @@ main {
         
         .project-line-start {
             border-left: 1.2px solid var(--colorSecondary);
-            height: 70px;
+            height: 50px;
             margin: 0.8rem 0;
         }
         
@@ -525,7 +561,7 @@ main {
     }
 }
 
-/* ########## ABOUT PAGE ########## */
+/* ########## CONTACT PAGE ########## */
 
 .contact {
     display: grid;
@@ -537,6 +573,7 @@ main {
         border-radius: var(--borderRadiusOuter);
         overflow: hidden;
         background-color: var(--colorCardBackground);
+        height: 350px;
 
         header {
             position: absolute;
@@ -552,9 +589,24 @@ main {
                 font-size: 2rem;
             }
         }
+
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+
     }
 
+    @media (min-width: 600px) {
+        article {
+            height: unset;
+        }
+    }
+
+
     .contact-form-container {
+        height: auto;
+
         form {
             display: flex;
             flex-direction: column;
@@ -590,10 +642,14 @@ main {
                 }
 
                 button {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 0.4rem;
                     background-color: var(--colorMain);
                     border: none;
                     color: var(--colorText);
-                    padding: 0.8rem;
+                    padding: 0.6rem;
                     font-family: var(--fontHeader);
                     font-weight: 700;
                     border-radius: var(--borderRadiusInner);

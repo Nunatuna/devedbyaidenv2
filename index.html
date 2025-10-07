@@ -73,12 +73,24 @@
     <main>
         <!-- ########## HOME PAGE ########## -->
 
-        <section id="page-home" class="page hidden">
-            <img src="img/me.png" alt="">
+        <section id="page-home" class="page">
+            <section class="welcome">
+                <article>
+                    <header>
+                        <img src="img/me.png" alt="">
+                        <h1>Hello <span>- I'm Aiden <span>[ay * den]</span></span></h1>
+                    </header>
+                    <img src="img/fire-painting.jpg" alt="">
+                </article>
+            </section>
+            <!-- <img src="img/me.png" alt="">
             <header class="welcome-text">
-                <h1>Hello</h1>
-                <h3>- I'm Aiden <span>[ay * den]</span></h3>
-            </header>
+                <div>
+                    <h1>Hello</h1>
+                    <h3>- I'm Aiden <span>[ay * den]</span></h3>
+                </div>
+                <img src="img/fire-painting.jpg" alt="">
+            </header> -->
             <div class="project-line-start-container">
                 <div class="project-line-start"></div>
                 <a href="#projects" class="project-line-scroll"><span class="material-symbols-rounded">mouse</span> Explore</a>
@@ -215,7 +227,7 @@
 
         <!-- ########## CONTACT PAGE ########## -->
 
-        <section id="page-contact" class="page">
+        <section id="page-contact" class="page hidden">
             <section class="contact">
                 <article>
                     <header>
@@ -243,7 +255,7 @@
                             <textarea name="message" id="message" placeholder="Hey Aiden!"></textarea>
                         </div>
                         <div>
-                            <button type="submit">Send</button>
+                            <button type="submit"><span class="material-symbols-rounded">send</span>Send</button>
                         </div>
                     </form>
                 </article>

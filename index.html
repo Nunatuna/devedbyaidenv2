@@ -73,7 +73,7 @@
     <main>
         <!-- ########## HOME PAGE ########## -->
 
-        <section id="page-home" class="page">
+        <section id="page-home" class="page hidden">
             <img src="img/me.png" alt="">
             <header class="welcome-text">
                 <h1>Hello</h1>
@@ -215,15 +215,39 @@
 
         <!-- ########## CONTACT PAGE ########## -->
 
-        <section id="page-contact" class="page hidden">
-            <header>
-                <h2>This is the contact page</h2>
-            </header>
-            <article>
-                <header>
+        <section id="page-contact" class="page">
+            <section class="contact">
+                <article>
+                    <header>
+                        <h1>Get in touch</h1>
+                    </header>
+                    <img src="img/magma.jpg" alt="">
+                </article>
 
-                </header>
-            </article>
+                <article class="contact-form-container">
+                    <form>
+                        <div>
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Jane Doe">
+                        </div>
+                        <div>
+                            <label for="email">Email</label>
+                            <input type="text" id="email" placeholder="jane@doe.com">
+                        </div>
+                        <div>
+                            <label for="phone">Phone</label>
+                            <input type="text" id="phone" placeholder="12 34 56 78">
+                        </div>
+                        <div>
+                            <label for="message">Message</label>
+                            <textarea name="message" id="message" placeholder="Hey Aiden!"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit">Send</button>
+                        </div>
+                    </form>
+                </article>
+            </section>
         </section>
     </main>
 

@@ -22,8 +22,8 @@
     --paddingDesktop: 2rem 6rem;
     --paddingPill: 0.4rem;
 
-    --borderRadiusOuter: 0.8rem;
     --borderRadiusInner: 0.4rem;
+    --borderRadiusOuter: calc(0.8rem + 0.4rem);
 
     --outerGlow: 0px 0px 40px 0px rgba(222,20,20,0.97);
 

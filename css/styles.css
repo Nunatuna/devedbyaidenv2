@@ -349,6 +349,68 @@ main {
     }
 }
 
+/* ########## PORTFOLIO PAGE ########## */
+
+#page-portfolio {
+    .portfolio-header {
+        margin-bottom: var(--paddingMobile);
+
+        article {
+            position: relative;
+            border-radius: var(--borderRadiusOuter);
+            overflow: hidden;
+            height: 400px;
+    
+            header {
+                position: absolute;
+                top: 0;
+                height: 100%;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: #0d1e2694;
+    
+                h1 {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    font-size: 2rem;
+                }
+            }
+    
+            img {
+                height: 400px;
+                object-fit: cover;
+                object-position: right;
+            }
+        }
+    }
+
+    .portfolio-card-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: var(--paddingMobile);
+
+        .portfolio-card {
+            background-color: var(--colorCardBackground);
+            border-radius: var(--borderRadiusOuter);
+            overflow: hidden;
+
+            .portfolio-card-content {
+                padding: var(--paddingMobile);
+            }
+        }
+    }
+
+    @media (min-width: 1000px) {
+        .portfolio-card-container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
 /* ########## ABOUT PAGE ########## */
 
 .about {

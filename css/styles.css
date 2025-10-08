@@ -62,7 +62,6 @@ body {
     a, button {
         -webkit-tap-highlight-color: transparent;
     }
-
 }
 
 nav {
@@ -81,7 +80,10 @@ nav {
 
     .text-nav {
         display: none;
-        
+
+        p {
+            font-family: var(--fontHeader);
+        }
     }
     
     .icon-nav {
@@ -126,6 +128,10 @@ nav {
 @media (min-width: 500px) {
     nav {
         position: unset;
+
+        ul {
+            justify-content: space-between;
+        }
     }
 }
 
@@ -397,16 +403,42 @@ main {
             background-color: var(--colorCardBackground);
             border-radius: var(--borderRadiusOuter);
             overflow: hidden;
+            padding: var(--paddingMobile);
 
-            .portfolio-card-content {
-                padding: var(--paddingMobile);
+            .project-card-header {
+                text-align: center;
+                margin-bottom: 1rem;
+
+                h2 {
+                    margin-bottom: 1rem;
+                }
             }
-        }
-    }
 
-    @media (min-width: 1000px) {
-        .portfolio-card-container {
-            grid-template-columns: repeat(2, 1fr);
+            .project-card-content {
+                display: flex;
+                gap: var(--paddingMobile);
+                overflow: auto;
+                scrollbar-width: none; /* Firefox */
+                -ms-overflow-style: none;  /* IE and Edge */
+
+
+                img {
+                    border-radius: var(--borderRadiusInner);
+                    width: 200px;
+                }
+            }
+
+            .project-card-content::-webkit-scrollbar {
+                display: none; /* Chrome */
+            }
+
+            @media (min-width: 600px) {
+                .project-card-content {
+                    p {
+                        width: 60ch;
+                    }
+                }
+            }
         }
     }
 }

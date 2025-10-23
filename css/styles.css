@@ -127,7 +127,8 @@ nav {
 
 @media (min-width: 500px) {
     nav {
-        position: unset;
+        top: 0;
+        bottom: unset;
 
         ul {
             justify-content: space-between;
@@ -210,6 +211,7 @@ main {
     
             img {
                 height: 400px;
+                width: 100%;
                 object-fit: cover;
             }
         }
@@ -303,7 +305,7 @@ main {
                     background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
                     width: 100%;
                     padding: 4rem 0 0.8rem 0.8rem;
-                    font-size: 1.2rem;
+                    font-size: 1.8rem;
                 }
             }
         }
@@ -406,12 +408,8 @@ main {
             padding: var(--paddingMobile);
 
             .project-card-header {
-                text-align: center;
+                /* text-align: center; */
                 margin-bottom: 1rem;
-
-                h2 {
-                    margin-bottom: 1rem;
-                }
             }
 
             .project-card-content {
@@ -425,6 +423,37 @@ main {
                 img {
                     border-radius: var(--borderRadiusInner);
                     width: 200px;
+                }
+            }
+
+            .project-links {
+                display: flex;
+                justify-content: end;
+
+                a {
+                    text-decoration: none;
+                    color: var(--colorText);
+                    padding: var(--paddingMobile);
+                    transition: 0.3s;
+                }
+                
+                .site-link {
+                    background-color: var(--colorMain);
+                    border-radius: 0.8rem 0 0 0.8rem;
+                }
+                
+                .github-link {
+                    background-color: var(--colorSecondary);
+                    border-radius: 0 0.8rem 0.8rem 0;
+                }
+                
+                .site-link, .github-link {
+                    /*Insert 0.8 opacity background to fix text also getting the opacity*/
+                    opacity: 0.8;
+                }
+
+                .site-link:hover, .github-link:hover {
+                    opacity: 1;
                 }
             }
 
@@ -453,7 +482,7 @@ main {
         background-color: var(--colorCardBackground);
         border-radius: var(--borderRadiusOuter);
         overflow: hidden;
-        grid-row: span 2;
+        grid-row: span 1;
 
         div {
             padding: var(--paddingMobile);
@@ -504,7 +533,7 @@ main {
         }
         
         .about-intro-welcome {
-            display: flex;
+            display: none;
             flex-direction: column;
             gap: 1rem;
             grid-column: 2 / 4;
@@ -512,7 +541,7 @@ main {
             padding: var(--paddingMobile);
             
             p {
-                line-height: 1.4;
+                line-height: 1.5rem;
             }
         }
     }
@@ -571,6 +600,10 @@ main {
         .about-education-card {
             grid-row: 2 / 4;
             grid-column: 3;
+        }
+
+        .about-intro-welcome {
+            display: flex;
         }
     }
     
@@ -647,10 +680,30 @@ main {
         }
     }
 
+    @media (min-width: 600px) {
+        .about-pet-container {
+            display: block;
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        .about-education-card {
+            grid-column: 2;
+        }
+    }
+
     @media (min-width: 1200px) {
         .about-pet-container {
             display: block;
             grid-row: 3;
+        }
+
+        .about-education-card {
+            grid-column: 3;
+        }
+
+        .about-intro-card {
+            grid-row: span 2;
         }
     }
 }
@@ -768,6 +821,10 @@ main {
 
 /* ########## RESPONSIVENESS ########## */
 @media (min-width: 600px) {
+    main {
+        padding-top: 4.5rem;
+    }
+
     .about {
         grid-template-columns: repeat(2, 1fr);
     }
